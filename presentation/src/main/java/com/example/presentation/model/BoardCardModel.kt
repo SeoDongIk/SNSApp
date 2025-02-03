@@ -1,6 +1,8 @@
 package com.example.presentation.model
 
 import androidx.compose.runtime.Immutable
+import com.example.domain.model.Board
+import com.example.domain.model.Comment
 
 @Immutable
 data class BoardCardModel(

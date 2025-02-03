@@ -2,6 +2,8 @@ package com.example.presentation.main.board
 
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagingData
+import com.example.domain.model.Comment
+import com.example.presentation.model.BoardCardModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.Flow

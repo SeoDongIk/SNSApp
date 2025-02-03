@@ -9,11 +9,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.example.domain.model.Comment
+import com.example.presentation.model.BoardCardModel
 import kr.co.fastcampus.presentation.theme.ConnectedTheme
 import org.orbitmvi.orbit.compose.collectAsState
 import org.orbitmvi.orbit.compose.collectSideEffect
@@ -23,7 +26,7 @@ fun BoardScreen(
     viewModel: BoardViewModel
 ) {
     val state = viewModel.collectAsState().value
-    var modelForDialog:BoardCardModel? by remember { mutableStateOf(null) }
+    var modelForDialog: BoardCardModel? by remember { mutableStateOf(null) }
     val context = LocalContext.current
 
     viewModel.collectSideEffect {sideEffect->
@@ -42,7 +45,6 @@ fun BoardScreen(
         model = modelForDialog,
         onDismissRequest = { modelForDialog = null },
         onBoardDelete = viewModel::onBoardDelete
-
     )
 }
 
